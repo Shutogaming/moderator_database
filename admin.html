@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Admin Panel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Moderator Database (Admin)</h1>
+
+<input type="text" id="search" placeholder="Zoek badge of username">
+
+<table>
+<thead>
+<tr>
+<th>Badge</th>
+<th>Username</th>
+<th>Rol</th>
+<th>Bewerk</th>
+</tr>
+</thead>
+
+<tbody id="mods">
+<tr><td>03063</td><td>Otis</td><td>Manager</td><td><button onclick="editRow(this)">✏</button></td></tr>
+<tr><td>26102</td><td>ano.guden</td><td>Senior Mod</td><td><button onclick="editRow(this)">✏</button></td></tr>
+<tr><td>04122</td><td>Broodje</td><td>Senior Mod</td><td><button onclick="editRow(this)">✏</button></td></tr>
+<tr><td>13052</td><td>Joren</td><td>Senior Mod</td><td><button onclick="editRow(this)">✏</button></td></tr>
+<tr><td>10092</td><td>Madder</td><td>Senior Mod</td><td><button onclick="editRow(this)">✏</button></td></tr>
+<tr><td>07021</td><td>Beagle</td><td>Moderator</td><td><button onclick="editRow(this)">✏</button></td></tr>
+<tr><td>01121</td><td>Bread glazer</td><td>Moderator</td><td><button onclick="editRow(this)">✏</button></td></tr>
+<tr><td>17101</td><td>Damp</td><td>Moderator</td><td><button onclick="editRow(this)">✏</button></td></tr>
+<tr><td>13501</td><td>Dyno</td><td>Moderator</td><td><button onclick="editRow(this)">✏</button></td></tr>
+<tr><td>06121</td><td>gtnntg</td><td>Moderator</td><td><button onclick="editRow(this)">✏</button></td></tr>
+<tr><td>29031</td><td>Miltie</td><td>Moderator</td><td><button onclick="editRow(this)">✏</button></td></tr>
+<tr><td>15051</td><td>Nimo</td><td>Moderator</td><td><button onclick="editRow(this)">✏</button></td></tr>
+<tr><td>29051</td><td>Shuto</td><td>Moderator</td><td><button onclick="editRow(this)">✏</button></td></tr>
+<tr><td>13051</td><td>super_man</td><td>Moderator</td><td><button onclick="editRow(this)">✏</button></td></tr>
+<tr><td>23011</td><td>Viviodezio</td><td>Moderator</td><td><button onclick="editRow(this)">✏</button></td></tr>
+<tr><td>15031</td><td>Vulcano</td><td>Moderator</td><td><button onclick="editRow(this)">✏</button></td></tr>
+</tbody>
+
+</table>
+
+<div id="formBox" style="display:none">
+<h3>Gegevens aanpassen</h3>
+<input id="badge">
+<input id="username">
+<input id="role">
+<button onclick="save()">Opslaan</button>
+</div>
+
+<script src="admin.js"></script>
+<script src="search.js"></script>
+
+</body>
+</html>

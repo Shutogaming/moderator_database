@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Admin Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Admin Login</h2>
+
+<input type="text" id="user" placeholder="Gebruikersnaam">
+<input type="password" id="pass" placeholder="Wachtwoord">
+<button onclick="checkLogin()">Login</button>
+
+<script>
+function checkLogin(){
+let user=document.getElementById("user").value
+let pass=document.getElementById("pass").value
+
+if(user==="otis" && pass==="panini56"){
+window.location.href="admin.html"
+}else{
+alert("Foute login")
+}
+}
+</script>
+
+</body>
+</html>
