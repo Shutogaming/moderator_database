@@ -2,49 +2,140 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
-<title>Moderator Database</title>
+<title>Moderator Dashboard</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h1>Moderator Database</h1>
-<p>Dit is de publieke database. Bewerken kan enkel via admin login.</p>
+<div class="sidebar">
+<h2>Mod Panel</h2>
 
-<button onclick="window.location.href='login.html'">Admin Login</button>
+<a href="#">Dashboard</a>
+<a href="#">Moderators</a>
+<a href="#">Logs</a>
+<a href="#">Instellingen</a>
 
-<input type="text" id="search" placeholder="Zoek badge of username">
+</div>
+
+<div class="main">
+
+<h1>Moderator Dashboard</h1>
+
+<div class="stats">
+
+<div class="card">
+<h3 id="modCount">0</h3>
+<p>Moderators</p>
+</div>
+
+<div class="card">
+<h3>4</h3>
+<p>Senior Mods</p>
+</div>
+
+<div class="card">
+<h3>1</h3>
+<p>Managers</p>
+</div>
+
+</div>
+
+<div class="controls">
+
+<input type="text" id="search" placeholder="Zoek badge, username of rol">
+
+<button onclick="openAdd()">+ Moderator</button>
+
+</div>
 
 <table>
+
 <thead>
 <tr>
 <th>Badge</th>
 <th>Username</th>
 <th>Rol</th>
+<th>Status</th>
+<th>Discord</th>
+<th>Startdatum</th>
+<th>Notities</th>
+<th>Acties</th>
 </tr>
 </thead>
+
 <tbody id="mods">
 
-<tr><td>03063</td><td>Otis</td><td>Manager</td></tr>
-<tr><td>26102</td><td>ano.guden</td><td>Senior Mod</td></tr>
-<tr><td>04122</td><td>Broodje</td><td>Senior Mod</td></tr>
-<tr><td>13052</td><td>Joren</td><td>Senior Mod</td></tr>
-<tr><td>10092</td><td>Madder</td><td>Senior Mod</td></tr>
-<tr><td>07021</td><td>Beagle</td><td>Moderator</td></tr>
-<tr><td>01121</td><td>Bread glazer</td><td>Moderator</td></tr>
-<tr><td>17101</td><td>Damp</td><td>Moderator</td></tr>
-<tr><td>13501</td><td>Dyno</td><td>Moderator</td></tr>
-<tr><td>06121</td><td>gtnntg</td><td>Moderator</td></tr>
-<tr><td>29031</td><td>Miltie</td><td>Moderator</td></tr>
-<tr><td>15051</td><td>Nimo</td><td>Moderator</td></tr>
-<tr><td>29051</td><td>Shuto</td><td>Moderator</td></tr>
-<tr><td>13051</td><td>super_man</td><td>Moderator</td></tr>
-<tr><td>23011</td><td>Viviodezio</td><td>Moderator</td></tr>
-<tr><td>15031</td><td>Vulcano</td><td>Moderator</td></tr>
+<tr>
+<td>03063</td>
+<td>Otis</td>
+<td>Manager</td>
+<td>Actief</td>
+<td>otis#1234</td>
+<td>10/01/2025</td>
+<td>Team lead</td>
+<td>
+<button onclick="editRow(this)">✏</button>
+<button onclick="deleteRow(this)">🗑</button>
+</td>
+</tr>
+
+<tr>
+<td>26102</td>
+<td>ano.guden</td>
+<td>Senior Mod</td>
+<td>Actief</td>
+<td>guden#5521</td>
+<td>11/02/2025</td>
+<td>Tickets</td>
+<td>
+<button onclick="editRow(this)">✏</button>
+<button onclick="deleteRow(this)">🗑</button>
+</td>
+</tr>
+
+<tr>
+<td>07021</td>
+<td>Beagle</td>
+<td>Moderator</td>
+<td>Actief</td>
+<td>beagle#9921</td>
+<td>01/04/2025</td>
+<td>Chat mod</td>
+<td>
+<button onclick="editRow(this)">✏</button>
+<button onclick="deleteRow(this)">🗑</button>
+</td>
+</tr>
 
 </tbody>
+
 </table>
 
-<script src="search.js"></script>
+</div>
+
+<div id="modal" class="modal">
+
+<div class="modalBox">
+
+<h3>Moderator aanpassen</h3>
+
+<input id="badge" placeholder="Badge nummer">
+<input id="username" placeholder="Username">
+<input id="role" placeholder="Rol">
+<input id="status" placeholder="Status">
+<input id="discord" placeholder="Discord">
+<input id="date" placeholder="Startdatum">
+<input id="notes" placeholder="Notities">
+
+<button onclick="save()">Opslaan</button>
+<button onclick="closeModal()">Sluiten</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
